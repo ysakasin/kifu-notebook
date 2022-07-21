@@ -59,7 +59,7 @@ export const App: React.FC<AppStateProps & AppDispatchProps> = ({
           <button onClick={onLoad}>Load</button>
           <button onClick={onClickSave}>Save</button>
         </div>
-        <h2>Kifu Notebook</h2>
+        <h2>Kifu Notebook Promoted</h2>
       </div>
       <div className="App-body">
         <BoardSetContainer />
