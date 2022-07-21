@@ -5,7 +5,7 @@ import { KifuTreeContainer } from "../containers/KifuTreeContainer";
 import { CurrentNodeContainer } from "../containers/CurrentNodeContainer";
 
 import "./App.css";
-const logo = require("./logo.svg");
+import Logo from "./logo.svg";
 
 export interface AppStateProps {
   message: string;
@@ -45,7 +45,7 @@ export const App: React.FC<AppStateProps & AppDispatchProps> = ({
   return (
     <div className="App">
       <div className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={Logo} className="App-logo" alt="logo" />
         <div className="global-controls">
           <span className="message">{message}</span>
           <label>
