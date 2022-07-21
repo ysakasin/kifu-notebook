@@ -27,9 +27,9 @@ export const App: React.FC<AppStateProps & AppDispatchProps> = ({
   onClickSave,
   onChangeAutoSave,
 }) => {
-  useEffect(() => {
-    onLoad();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  // useEffect(() => {
+  //   onLoad();
+  // }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     const onBeforeUnload = (e: BeforeUnloadEvent) => {
@@ -56,6 +56,7 @@ export const App: React.FC<AppStateProps & AppDispatchProps> = ({
             />
             AutoSave
           </label>
+          <button onClick={onLoad}>Load</button>
           <button onClick={onClickSave}>Save</button>
         </div>
         <h2>Kifu Notebook</h2>
