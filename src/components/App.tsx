@@ -27,10 +27,6 @@ export const App: React.FC<AppStateProps & AppDispatchProps> = ({
   onClickSave,
   onChangeAutoSave,
 }) => {
-  // useEffect(() => {
-  //   onLoad();
-  // }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
   useEffect(() => {
     const onBeforeUnload = (e: BeforeUnloadEvent) => {
       if (needSave) {
@@ -41,6 +37,18 @@ export const App: React.FC<AppStateProps & AppDispatchProps> = ({
 
     return () => window.removeEventListener("beforeunload", onBeforeUnload);
   }, [needSave]);
+
+  useEffect(() => {
+    const shortcut = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === "s") {
+        e.preventDefault();
+        onClickSave();
+      }
+    }
+
+    window.addEventListener("keydown", shortcut);
+    return () => window.removeEventListener("keydown", shortcut);
+  }, [onClickSave])
 
   return (
     <div className="App">
