@@ -1,4 +1,5 @@
 import { Color } from "shogi.js";
+import { Kind } from "shogi.js/dist/src/Kind";
 
 export { Color };
 
@@ -9,14 +10,14 @@ export type Place = {
 
 export type MovePiece = {
   color: Color;
-  kind: string;
+  kind: Kind;
   from: Place;
   to: Place;
 };
 
 export type DropPiece = {
   color: Color;
-  kind: string;
+  kind: Kind;
   from: undefined;
   to: Place;
 };

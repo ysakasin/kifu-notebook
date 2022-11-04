@@ -3,6 +3,7 @@ import React from "react";
 import { Color } from "./types";
 import { Piece } from "./Piece";
 import "./Hand.css";
+import { Kind } from "shogi.js/dist/src/Kind";
 
 export type HandProps = {
   color: Color;
@@ -11,7 +12,7 @@ export type HandProps = {
   reversed: boolean;
 };
 
-const pieceKinds = ["HI", "KA", "KI", "GI", "KE", "KY", "FU"];
+const pieceKinds: Kind[] = ["HI", "KA", "KI", "GI", "KE", "KY", "FU"];
 
 const range = (n: number): number[] => [...Array(n)].map((_, i) => i);
 

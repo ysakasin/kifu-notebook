@@ -104,9 +104,11 @@ export class KifuTree extends Record<IKifuTree>({
     const keyPath = pathToKeyPath(path);
     let childrenUpdated = false;
     const newRootNode = this.rootNode.updateIn(keyPath, (node) => {
-      const updatedNode = nodeUpdater(node);
-      childrenUpdated = node.children !== updatedNode.children;
-      return updatedNode;
+      if (node instanceof KifuTreeNode) {
+        const updatedNode = nodeUpdater(node);
+        childrenUpdated = node.children !== updatedNode.children;
+        return updatedNode;
+      }
     });
     const newTree = this.set("rootNode", newRootNode);
 

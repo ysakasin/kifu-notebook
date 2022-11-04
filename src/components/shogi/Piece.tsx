@@ -1,11 +1,12 @@
 import React from "react";
 import { useDrag } from "react-dnd";
+import { Kind } from "shogi.js/dist/src/Kind";
 
 import { Color, Place } from "./types";
 
 export type PieceProps = {
   color: Color;
-  kind: string;
+  kind: Kind;
   place: Place | undefined;
   reversed: boolean;
 };
@@ -13,7 +14,7 @@ export type PieceProps = {
 export type PieceDragObject = {
   type: "piece";
   color: Color;
-  kind: string;
+  kind: Kind;
   from: Place | undefined;
 };
 
